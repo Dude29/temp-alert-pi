@@ -17,7 +17,7 @@ If you intend to use a gmail account as the sender email then you must configure
 
 The script will send an email with the account you configure when setting up `msmtp` if the Raspberry Pi's temperature is currently above the safe documented limits. 
 
-To change the recipient of the alert email edit the `alert.mail` file and change the [To:](https://github.com/Dude29/temp-alert-pi/blob/9a4176bfd93648a3206deeaaa2994f49aff0ef01/alert.mail#L1) field accordingly.
+To change the recipient of the alert email edit the `alert.mail` file and change the [To:](https://github.com/Dude29/temp-alert-pi/blob/9f0123a64f5b4612e59b438518d84c0104bed9cc/alert.mail#L1) field accordingly.
 
 You can also edit the contents of `alert.mail` to your liking.
 
