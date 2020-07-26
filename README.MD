@@ -4,15 +4,20 @@ Bash script to send an email when your Raspberry Pi's temperature surpasses the 
 
 ### Configuring
 
-This script depends on the command `sendmail`. 
-To understand how to configure and install this command on your Raspberry refer to [this guide](https://linuxhandbook.com/linux-send-email-ssmtp/).
-
-In addition this script reads 3 bash variables: 
-
-| Variable    | Description |
-| ----------- | ----------- |
-| 	`$FROM`   | The address to send the alert email from			|
-| 	`$PWRD`   | Password credential for the sending email account	|
-|	`$TO`	  |	The address to send the alert email to  			|
+This script depends on the command `msmtp`. 
+To understand how to configure and install this command on your Raspberry refer to [this guide](https://wiki.archlinux.org/index.php/Msmtp#Installing).
 
 If you intend to use a gmail account as the sender email then you must configure that account to [allow unsafe apps](https://support.google.com/accounts/answer/6010255?hl=en).
+
+### Usage
+
+```bash 
+./checktemp.sh
+```
+
+The script will send an email with the account you configure when setting up `msmtp` if the Raspberry Pi's temperature is currently above the safe documented limits. 
+
+To change the recipient of the alert email edit the `alert.mail` file and change the [To:](https://github.com/Dude29/temp-alert-pi/blob/9a4176bfd93648a3206deeaaa2994f49aff0ef01/alert.mail#L1) field accordingly.
+
+
+
