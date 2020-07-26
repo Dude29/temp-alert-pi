@@ -9,7 +9,7 @@ TEMP_C=$(cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1 / 1000}' | s
 
 if [ $(awk 'BEGIN {print ('$TEMP_C' >= 70)}') -eq 1 ]; then
     echo "mans hot"
-	sed -e 's/--TEMP_C--/'$TEMP_C'/g' email.txt | sendmail -au $FROM -ap $PWRD $TO
+	sed -e 's/--TEMP_C--/'$TEMP_C'/g' ${BASH_SOURCE%/*}/alert.mail | msmtp --read-recipients --add-missing-date-header
 else 
     echo "mans not hot"
 fi
