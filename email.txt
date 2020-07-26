@@ -1,3 +1,0 @@
-Subject: Raspberry Pi temperature alert
-
-Raspberry Pi is currently at --TEMP_C-- Cº
